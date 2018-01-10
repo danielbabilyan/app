@@ -1,4 +1,3 @@
-<div>
-    <side-menu></side-menu>
-    <page-content></page-content>
-</div>
+<keep-alive>
+        <component :is="currentView"></component>
+</keep-alive>
