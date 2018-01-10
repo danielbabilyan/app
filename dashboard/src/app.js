@@ -1,20 +1,21 @@
 // import files
-import Vue from 'vue/dist/vue.esm.js';
 import './global/index.scss';
 
 // require files
 const template = require('./app.html');
-const home = require('./home/home');
+const side_menu = require('./side-menu/side-menu');
+const page_content = require('./page-content/page-content');
 
 new Vue ({
     el: '#root',
-    template,
-    data: function() {
+    data: function () {
         return {
-            currentView: 'home'
+            'page-content-load-file': ''
         }
     },
-    components: {
-        'home': home
+    template,
+    components : {
+        'side-menu': side_menu,
+        'page-content': page_content,
     }
 });

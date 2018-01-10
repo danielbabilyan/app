@@ -1,1 +1,1 @@
-body,html{background:#ddd;margin:0;padding:0;height:100%}
+body,html{background:#ddd;margin:0;padding:0;height:100%}.side-menu{background:#4a5bf8;width:250px;display:block;position:absolute;left:0;height:100%}.page-content{background:#00ff95;width:calc(100% - 250px);display:block;position:absolute;left:250px;height:100%}
