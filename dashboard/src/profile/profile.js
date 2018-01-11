@@ -1,8 +1,8 @@
 // import files
-import './home.scss';
+import './profile.scss';
 
 // require files
-const template = require('./home.html');
+const template = require('./profile.html');
 
 module.exports = {
     template,

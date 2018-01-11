@@ -1,3 +1,6 @@
-<keep-alive>
-        <component :is="currentView"></component>
-</keep-alive>
+<div>
+        {{ currentRoute }} - {{ currentRoutee }}
+        <keep-alive>
+                <component :is="currentRoute"></component>
+        </keep-alive>
+</div>

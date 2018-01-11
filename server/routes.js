@@ -7,8 +7,21 @@
         
         module.exports = function(app, express) {
             // app.use('/*THE FOLDER NAME*', express.static(path.join(__dirname, '../*THE APP NAME*/public')));
+            //app.use('/dashboard*', express.static(path.join(__dirname, '../dashboard/public')));
+
+            // app.use(express.static('/public'));
+            // app.get('/dashboard/*', function (req, res) {
+            //     res.sendFile(path.join(__dirname + '../../dashboard/public/index.html'));
+            // });
+            // app.use('/dashboard', express.static(path.join(__dirname, '../dashboard/public')));
+
             app.use('/dashboard', express.static(path.join(__dirname, '../dashboard/public')));
-            
+            app.get('/dashboard*', function(req, res) {
+                res.sendfile('./dashboard/public/index.html');
+            });
+
+
+
             // app.post('/login', function (req, res) {
             //      var user = req.body.user;
             //      var pass = req.body.pass;
