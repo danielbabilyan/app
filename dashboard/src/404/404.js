@@ -1,8 +1,8 @@
 // import files
-import './home.scss';
+import './404.scss';
 
 // require files
-const template = require('./home.html');
+const template = require('./404.html');
 const side_menu = require('../side-menu/side-menu');
 
 module.exports = {

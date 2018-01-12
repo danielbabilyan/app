@@ -3,22 +3,30 @@ import Vue from 'vue/dist/vue.esm.js';
 import './global/index.scss';
 
 // require files
-const template = require('./app.html');
-const side_menu = require('./side-menu/side-menu');
-const home = require('./home/home');
-const profile = require('./profile/profile');
+// const side_menu = require('./side-menu/side-menu');
+// const home = require('./home/home');
+// const profile = require('./profile/profile');
+import routes from './routes';
 
-new Vue ({
+const app = new Vue({
     el: '#root',
-    template,
-    data: function() {
-        return {
-            currentRoute: '/dashboard/home',
-            currentRoutee: window.location.pathname
+    data: {
+      currentRoute: window.location.pathname
+    },
+    computed: {
+        ViewComponent () {
+            const matchingView = routes[this.currentRoute]
+            return matchingView
+            ? require('./' + matchingView + '/' + matchingView)
+            : require('./404/404')
         }
     },
-    components: {
-        '/dashboard/home': home,
-        '/dashboard/profile': profile
+    render (h) {
+      return h(this.ViewComponent)
     }
-});
+  })
+  
+  window.addEventListener('popstate', () => {
+    app.currentRoute = window.location.pathname
+  });
+  
