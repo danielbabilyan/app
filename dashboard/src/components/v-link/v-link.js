@@ -1,7 +1,4 @@
-// require files
 const template = require('./v-link.html');
-
-import routes from '../routes';
 
 module.exports = {
     template,
