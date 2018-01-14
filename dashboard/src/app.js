@@ -15,7 +15,7 @@ const app = new Vue({
     },
     computed: {
         ViewComponent () {
-            const matchingView = routes[this.currentRoute]
+            const matchingView = routes[/(\w+)\/?(\w+)?/.exec(this.currentRoute)[2]]
             return matchingView
             ? require('./' + matchingView + '/' + matchingView)
             : require('./404/404')
@@ -29,4 +29,3 @@ const app = new Vue({
   window.addEventListener('popstate', () => {
     app.currentRoute = window.location.pathname
   });
-  

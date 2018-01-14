@@ -16,7 +16,7 @@
             // app.use('/dashboard', express.static(path.join(__dirname, '../dashboard/public')));
 
             app.use('/dashboard', express.static(path.join(__dirname, '../dashboard/public')));
-            app.get('/dashboard*', function(req, res) {
+            app.get('/dashboard[/]*', function(req, res) {
                 res.sendfile('./dashboard/public/index.html');
             });
 

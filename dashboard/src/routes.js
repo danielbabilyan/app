@@ -1,4 +1,4 @@
 export default {
-    '/dashboard/': 'home',
-    '/dashboard/profile': 'profile'
-  }  
+    undefined: 'home',
+    'profile': 'profile'
+  }

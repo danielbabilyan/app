@@ -1,15 +1,12 @@
 var express = require('express');
-var session = require('express-session');
-var bodyParser = require('body-parser');
+var path = require('path');
 var app = express();
 var port = process.env.PORT || 1234;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use('/dashboard', express.static(path.join(__dirname, './dashboard/public')));
+app.get('/dashboard*', function(req, res) {
+    res.sendfile('./dashboard/public/index.html');
+});
 
 app.listen(port);
-console.log('Server on port ' + port);
-
-require('./server/routes.js')(app, express);
+console.log('http://localhost:' + port);
