@@ -1,4 +1,3 @@
 export default {
-    undefined: 'home',
-    'profile': 'profile'
+    undefined: 'home'
   }
