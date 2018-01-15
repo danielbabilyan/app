@@ -1,3 +1,10 @@
+import './jquery-1.12.4.js';
+import './uikit.js';
+import './uikit-icons.js';
+
+import './uikit.scss';
+import './uikit-fix.scss';
+
 import Vue from 'vue/dist/vue.esm.js';
 import routes from './routes';
 

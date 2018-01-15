@@ -1,4 +1,5 @@
 export default {
-    undefined: 'home',
-    'profile': 'profile'
-  }
+  'login': 'login',
+  'myCards': 'my-cards',
+  'companySettings': 'company-settings'
+}
