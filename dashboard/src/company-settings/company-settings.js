@@ -1,8 +1,13 @@
-document.title += ' - Company Settings';
+document.title = 'Dashboard - Company Settings';
 
-import './company-settings.scss';
+require('./company-settings.scss');
+
 const template = require('./company-settings.html');
+const side_menu = require('../../components/side-menu/side-menu');
 
 module.exports = {
-    template
+    template,
+    components: {
+        'side-menu': side_menu
+    }
 };

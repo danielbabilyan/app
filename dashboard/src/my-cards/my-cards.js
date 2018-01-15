@@ -1,6 +1,6 @@
-document.title += ' - My Cards';
+document.title = 'Dashboard - My Cards';
 
-import './my-cards.scss';
+require('./my-cards.scss');
 const template = require('./my-cards.html');
 const side_menu = require('../../components/side-menu/side-menu');
 
