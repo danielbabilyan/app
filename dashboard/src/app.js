@@ -2,26 +2,28 @@ require('./app.scss');
 
 const Vue = require('vue/dist/vue.common');
 const $ = require('jquery');
-const routes = require('./routes');
+
+const template = require('./app.html');
+
+const page_login = require('./components/login/login');
+const page_page = require('./components/page/page');
 
 const app = new Vue({
   el: '#root',
+  template,
   data: {
-    currentRoute: window.location.pathname
+    page: 'login',
   },
   computed: {
-      ViewComponent () {
-          const matchingView = routes[/(\w+)\/?(\w+)?/.exec(this.currentRoute)[2]]
-          return matchingView
-          ? require('./' + matchingView + '/' + matchingView)
-          : require('./404/404')
-      }
+
   },
-  render (h) {
-    return h(this.ViewComponent)
-  }
-});
-  
-window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname
+  components: {
+    'page-login': page_login,
+    'page-page': page_page,
+  },
+  methods: {
+    click: function () {
+      this.page = 'page';
+    }
+  },
 });
